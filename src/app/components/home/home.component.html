@@ -1,0 +1,26 @@
+<div class="background">
+  <p class="p-2.5">*Quizzes do not load all at once, but gradually.</p>
+  <div class="container flex flex-col items-center justify-center">
+    <h1 class="title">Quiz App</h1>
+    <div class="card-container">
+      <mat-card class="lucky-quiz" (click)="onLuckyClick()">
+        <mat-card-header>
+          <span class="font-bold">I'm Lucky</span>
+        </mat-card-header>
+      </mat-card>
+
+      <mat-card
+        class="quiz-card polymorph"
+        *ngFor="let quiz of quizzes$ | async"
+        (click)="onPlay(quiz.id)"
+      >
+        <mat-card-header>
+          <span class="font-bold">{{ quiz.name }}</span>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Questions: {{ quiz.questions.length }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

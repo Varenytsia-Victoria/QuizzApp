@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #dbf9d447;
+  border: 1px solid rgba(255, 255, 255, 0.521);
+  border-radius: 30px;
+  height: 80vh;
+  width: 80vw;
+  box-sizing: border-box;
+}

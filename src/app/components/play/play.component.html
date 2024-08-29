@@ -1,0 +1,35 @@
+<div class="container mx-auto p-4">
+  <div *ngIf="quiz$ | async as quiz" class="question-card">
+    <div class="title">
+      <h2>{{ quiz.name }}</h2>
+      <p>Time Elapsed: {{ totalTime }} seconds</p>
+    </div>
+    <div class="question-area" *ngIf="quiz.questions.length > 0">
+      <p class="p-4">{{ quiz.questions[currentQuestionIndex].question }}</p>
+      <form>
+        <div
+          *ngFor="let answer of quiz.questions[currentQuestionIndex].answers"
+        >
+          <label>
+            <input
+              type="radio"
+              name="answers"
+              [value]="answer"
+              (change)="onAnswerSelect($event)"
+              [checked]="selectedAnswer === answer"
+              id="{{ answer }}"
+              class="visually-hidden"
+            />
+            <div class="custom-radio">
+              <span>{{ answer }}</span>
+            </div>
+          </label>
+        </div>
+      </form>
+      <button (click)="onNextQuestion()" [disabled]="!selectedAnswer">
+        Next Question
+      </button>
+      <button (click)="onCancelQuiz()">Cancel</button>
+    </div>
+  </div>
+</div>

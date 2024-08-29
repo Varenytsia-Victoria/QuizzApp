@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Quiz Finished</h1>
+  <p>Score: {{ score }}</p>
+  <p>Correct Answers: {{ correctAnswers }}</p>
+  <p>Correct Answers in Percentage: {{ correctAnswerPercentage }}</p>
+  <p>Total Time: {{ totalTime }} seconds</p>
+  <p>Average Time Per Question: {{ averageTimePerQuestion }} seconds</p>
+  <button (click)="onRestartQuiz()">Restart</button>
+</div>

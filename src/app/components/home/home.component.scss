@@ -1,0 +1,77 @@
+* {
+  color: white;
+}
+
+mat-card {
+  width: 160px;
+  min-height: 160px;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+span {
+  font-size: 24px;
+}
+
+.title {
+  font-size: 5.5vw;
+  text-align: center;
+}
+
+.lucky-quiz {
+  background-color: #4704ab4b;
+  border-radius: 20px;
+}
+
+.quiz-card {
+  background-color: #dbf9d447;
+  border: 1px solid rgba(255, 255, 255, 0.521);
+  border-radius: 20px;
+}
+
+.card-container {
+  padding: 30px;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 10vw;
+    padding-top: 20px;
+  }
+
+  .card-container {
+    padding: 15px;
+    padding-top: 30px;
+    gap: 15px;
+  }
+
+  .home {
+    height: 90vh;
+    width: 90vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 10vw;
+    padding-top: 10px;
+  }
+
+  .card-container {
+    padding: 10px;
+    padding-top: 20px;
+    gap: 10px;
+  }
+
+  .home {
+    height: 95vh;
+    width: 95vw;
+  }
+}
