@@ -33,14 +33,7 @@ export class FinishComponent implements OnInit {
         this.correctAnswers = results.correctAnswers;
         this.totalTime = results.totalTime;
         this.correctAnswerPercentage = results.correctAnswerPercentage;
-
-        if (this.correctAnswers > 0) {
-          this.averageTimePerQuestion = (
-            this.totalTime / this.correctAnswers
-          ).toFixed(2);
-        } else {
-          this.averageTimePerQuestion = '0.00';
-        }
+        this.averageTimePerQuestion = results.averageTimePerQuestion.toFixed(2);
       });
     }
   }

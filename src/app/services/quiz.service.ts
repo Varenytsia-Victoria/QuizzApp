@@ -155,9 +155,10 @@ export class QuizService {
       .find((quiz) => quiz.id === quizId);
 
     if (currentQuiz) {
+      const totalQuestions = currentQuiz.questions.length;
       const correctAnswers = this.correctAnswers;
       const totalTime = this.totalTime;
-      const totalQuestions = currentQuiz.questions.length;
+      const averageTimePerQuestion = this.totalTime / totalQuestions;
       const score = correctAnswers * (100 / totalQuestions);
       const correctAnswerPercentage =
         totalQuestions > 0 ? (correctAnswers / totalQuestions) * 100 : 0;
@@ -166,10 +167,7 @@ export class QuizService {
         score,
         correctAnswers,
         totalTime,
-        averageTimePerQuestion:
-          correctAnswers > 0
-            ? +(totalTime / correctAnswers).toFixed(2)
-            : '0.00',
+        averageTimePerQuestion,
         correctAnswerPercentage: +correctAnswerPercentage.toFixed(2),
       });
     }
@@ -177,7 +175,7 @@ export class QuizService {
       score: 0,
       correctAnswers: 0,
       totalTime: 0,
-      averageTimePerQuestion: '0.00',
+      averageTimePerQuestion: 0,
       correctAnswerPercentage: 0,
     });
   }
